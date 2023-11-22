@@ -6,7 +6,8 @@ const ProductSchema = new mongoose.Schema({
     platenumber:String,
     initialdate:Date,
     finaldate: Date,
-    status:Boolean
+    status:{ type:Boolean,
+    default:true}
  
 })
 

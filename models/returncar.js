@@ -12,4 +12,4 @@ const ProductSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('returncar', ProductSchema);
+module.exports = mongoose.model('returncars', ProductSchema);
