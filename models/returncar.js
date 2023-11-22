@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
     returnnumber:String,
-    rentnumber:String,
+    rentnumber: String,
     returndate:Date,
     created:{
         type:Date,
