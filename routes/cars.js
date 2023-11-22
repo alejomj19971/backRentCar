@@ -48,6 +48,18 @@ router.post("/crearcar",async (req, res) => {
     });
   });
 
+  router.get("/listarcar/nodisponibles",async (req, res) => {
+    await Car.find({state:false}).then((carros) => {
+      console.log(carros);
+      if (carros.length > 0) {
+        res.json(carros);
+      } else {
+        res.json({ message: "No existen registros" });
+      }
+    });
+  });
+
+
   router.put("/updatecar", async (req, res) => {
     let message = "";
     let error = false;

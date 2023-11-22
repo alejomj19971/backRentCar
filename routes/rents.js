@@ -42,4 +42,17 @@ router.post("/rentarcar", async (req, res) => {
       });
     });
 
+    router.get("/listarentnumber/:platenumber", async (req, res) => {
+      console.log(req.params)
+      await Rent.findOne({ platenumber: req.params.platenumber })
+      .then((rentas) => {
+        if (rentas!=null) {
+          res.json(rentas);
+        } else {
+          res.json({ message: "No existen vehiculos rentados" });
+        }
+      });
+    });
+
+
     module.exports = router;
